@@ -4,6 +4,8 @@
     <Platform Name="x86" />
   </Configurations>
   <Folder Name="/Solution Items/">
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
     <File Path="azure-pipelines.yml" />
     <File Path="Common.props" />
     <File Path="RepositoryAPI.nuspec" />
