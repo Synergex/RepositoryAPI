@@ -13,6 +13,11 @@ names suitable for SQL and xfODBC.
 > setters, the library contains no API that writes the changed objects back to
 > the Repository. Treat the loaded objects as an in-memory snapshot.
 
+## Recent Changes
+
+- Added RpsField.WasGroupMember to allow tools to essily detect fields that
+  were originally members of a GROUP field. (November 3rd 2026)
+
 ## Contents
 
 - [Project and runtime requirements](#project-and-runtime-requirements)

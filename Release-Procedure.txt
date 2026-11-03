@@ -6,7 +6,7 @@ This document defines the procedure for distributing a new release of Repository
 
 1. Check that all software changes have been commited and pushed to GitHub.
 
-2. Update the documentation (README.TXT, etc.).
+2. Update the documentation (Recent Changes section in README.md, etc.).
 
 3. Run the Azure DevOps build pipeline and verify that it completes successfully.
     (https://synergexdev.visualstudio.com/Development/_build?definitionId=430)
