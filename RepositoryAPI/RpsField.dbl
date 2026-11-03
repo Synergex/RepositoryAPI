@@ -2341,6 +2341,7 @@ namespace RepositoryAPI
 ;protected mUnmappingFunction    ,String     ;Mapping unconversion function
 ;protected mAutoIncrement        ,boolean    ;Auto incrementing numeric field
 ;protected mWasArrayElement      ,boolean    ;Field was from an expanded array
+;protected mWasGroupMember       ,boolean    ;Field was a member of a group
 ;protected mOriginalElement      ,[#]int     ;Original element #'s for expanded array fields
 ;protected mSqlName              ,String     ;SQL compatible name
 ;protected mOdbcName             ,String     ;ODBC compatible name
@@ -2931,6 +2932,7 @@ namespace RepositoryAPI
             this.UnmappingFunction      = SourceField.UnmappingFunction
             this.AutoIncrement          = SourceField.AutoIncrement
             this.WasArrayElement        = SourceField.WasArrayElement
+            this.WasGroupMember         = SourceField.WasGroupMember
             this.SqlName                = SourceField.SqlName
             this.OdbcName               = SourceField.OdbcName
             this.OriginalName           = SourceField.OriginalName
@@ -3938,6 +3940,13 @@ namespace RepositoryAPI
         ;;; was expanded into multiple individual fields
         ;;; </summary>
         public readwrite property WasArrayElement, boolean, false
+
+        ;;; <summary>
+        ;;; (CodeGen Specific)
+        ;;; Indicates that the field was created when a group field
+        ;;; was expanded into multiple individual fields
+        ;;; </summary>
+        public readwrite property WasGroupMember, boolean, false
 
         ;;; <summary>
         ;;; (CodeGen Specific)

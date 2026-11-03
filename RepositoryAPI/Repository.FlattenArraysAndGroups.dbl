@@ -534,6 +534,10 @@ namespace RepositoryAPI
                         Child.GroupFields = new RpsFieldCollection(rps)
                         Child.GroupMemberPrefix = String.Empty
 
+                        ; Record that the field used to be part of a GROUP
+
+                        Child.WasGroupMember = true
+
                         ; And add it to the fields collection
 
                         if ((ix+gfix+1)<=Struct.Fields.Count-1) then
