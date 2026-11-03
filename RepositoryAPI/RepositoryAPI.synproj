@@ -1,0 +1,85 @@
+<Project Sdk="Microsoft.NET.Sdk" DefaultTargets="restore;Build">
+  <Import Project="$(SolutionDir)Common.props" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <DefaultLanguageSourceExtension>.dbl</DefaultLanguageSourceExtension>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ProjectGuid>{7f590216-7da0-4662-988b-166c12a0ce1a}</ProjectGuid>
+    <EnableCommonProperties>True</EnableCommonProperties>
+    <IgnoreCommonPropWarning>False</IgnoreCommonPropWarning>
+    <Prefer32Bit>False</Prefer32Bit>
+    <IncludeDebugInformation>False</IncludeDebugInformation>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <CommonPropertiesFileLocation>$(SolutionDir)Common.props</CommonPropertiesFileLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <TargetRuntimeLevel>12030100</TargetRuntimeLevel>
+    <RunVerifyPostCompile>False</RunVerifyPostCompile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Synergex.SynergyDE.Build">
+      <Version>26.8.1692</Version>
+    </PackageReference>
+    <PackageReference Include="Synergex.SynergyDE.ddlib">
+      <Version>12.5.1.1007</Version>
+    </PackageReference>
+    <PackageReference Include="Synergex.SynergyDE.synrnt">
+      <Version>12.5.1.1007</Version>
+    </PackageReference>
+    <PackageReference Include="Synergex.SynergyDE.synxml">
+      <Version>12.5.1.1007</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataMapping.dbl" />
+    <Compile Include="DataMappings.dbl" />
+    <Compile Include="Repository.dbl" />
+    <Compile Include="Repository.FlattenArraysAndGroups.dbl" />
+    <Compile Include="RpsEnum.dbl" />
+    <Compile Include="RpsEnumCollection.dbl" />
+    <Compile Include="RpsEnumMember.dbl" />
+    <Compile Include="RpsEnumMemberCollection.dbl" />
+    <Compile Include="RpsExceptions.dbl" />
+    <Compile Include="RpsField.dbl" />
+    <Compile Include="RpsFieldCollection.dbl" />
+    <Compile Include="RpsFile.dbl" />
+    <Compile Include="RpsFileCollection.dbl" />
+    <Compile Include="RpsFormat.dbl" />
+    <Compile Include="RpsFormatCollection.dbl" />
+    <Compile Include="RpsKey.dbl" />
+    <Compile Include="RpsKeyCollection.dbl" />
+    <Compile Include="RpsKeySegment.dbl" />
+    <Compile Include="RpsKeySegmentCollection.dbl" />
+    <Compile Include="RpsRelation.dbl" />
+    <Compile Include="RpsRelationCollection.dbl" />
+    <Compile Include="RpsStructure.dbl" />
+    <Compile Include="RpsStructureCollection.dbl" />
+    <Compile Include="RpsTag.dbl" />
+    <Compile Include="RpsTagCollection.dbl" />
+    <Compile Include="RpsTemplate.dbl" />
+    <Compile Include="RpsTemplateCollection.dbl" />
+    <Compile Include="RpsTemplateCustom.dbl" />
+    <Compile Include="RpsUtils.dbl" />
+    <Compile Include="StringTools.dbl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\LICENSE.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="..\README.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DataMappingsExample.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Properties\launchSettings.json">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,69 @@
+# RepositoryAPI Build Pipeline
+# Builds RepositoryAPI and packages it as a NuGet package.
+#
+# Versioning: bump currentVersion below for each release. It is used for both
+# the NuGet package version (nuget pack -Version) and the assembly version
+# attributes in RepositoryAPI.dll (msbuild /p:Version, see Common.props).
+
+# Use CI, run the pipeline on each commit to the master branch
+#trigger:
+#- master
+
+# Opt out of CI, run the pipeline manually
+trigger: none
+
+jobs:
+- job: RepositoryAPIBuild
+  timeoutInMinutes: '10'
+
+  pool:
+   name: 'CodeGen Pool'
+   demands:
+    - SYNERGYDE32
+
+  variables:
+  - name: currentVersion
+    value: '6.1.7'
+  - name: buildPlatform
+    value: 'Any CPU'
+  - name: buildConfiguration
+    value: 'Release'
+
+  steps:
+
+  - task: NuGetToolInstaller@1
+    displayName: 'Get NuGet tool'
+    inputs:
+      versionSpec: '7.x'
+
+  - task: NuGetCommand@2
+    displayName: 'Restore NuGet packages'
+    inputs:
+      command: 'restore'
+      restoreSolution: 'RepositoryAPI.slnx'
+
+  - task: BatchScript@1
+    displayName: 'Configure SDE environment'
+    inputs:
+      filename: '$(SYNERGYDE32)\dbl\dblvars32.bat'
+      modifyEnvironment: true
+
+  - task: VSBuild@1
+    displayName: 'Build RepositoryAPI solution'
+    inputs:
+      solution: 'RepositoryAPI.slnx'
+      platform: '$(buildPlatform)'
+      configuration: '$(buildConfiguration)'
+      msbuildArgs: '/p:Version=$(currentVersion)'
+      vsVersion: "17.0"
+
+  - script: |
+      nuget pack RepositoryAPI.nuspec -Version $(currentVersion) -Properties "commit=$(Build.SourceVersion)"
+    displayName: 'Make RepositoryAPI package'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Save NuGet package as artifact'
+    inputs:
+      PathtoPublish:  'RepositoryAPI.$(currentVersion).nupkg'
+      ArtifactName: 'RepositoryAPI-Package'
+      publishLocation: 'Container'
