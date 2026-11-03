@@ -15,8 +15,9 @@ names suitable for SQL and xfODBC.
 
 ## Recent Changes
 
-- Added RpsField.WasGroupMember to allow tools to essily detect fields that
-  were originally members of a GROUP field. (November 3rd 2026)
+- Added RpsField.WasGroupMember and RpsField.WasGroupField to allow tools to
+  essily detect fields that were originally members of a GROUP field and know
+  the original unaltered field name. (November 3rd 2026)
 
 ## Contents
 

@@ -3950,6 +3950,12 @@ namespace RepositoryAPI
 
         ;;; <summary>
         ;;; (CodeGen Specific)
+        ;;; Records the unaltered name of the original GROUP field
+        ;;; </summary>
+        public readwrite property WasGroupField, string, String.Empty
+
+        ;;; <summary>
+        ;;; (CodeGen Specific)
         ;;; For array fields which have been expanded out to multiple
         ;;; individual fields, this property exposes the fields original
         ;;; array element number. A value of 0 indicates that the field

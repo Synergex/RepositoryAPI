@@ -496,6 +496,11 @@ namespace RepositoryAPI
 
                         Child.FieldNumber = Field.FieldNumber
 
+                        ; Before we do anything to the field name properties, record that it was part of a group, and its original name
+                        
+                        Child.WasGroupMember = true
+                        Child.WasGroupField = Field.Name
+
                         ; Prefix the name with the group field name
 
                         tmpName = Field.Name + "."
@@ -533,10 +538,6 @@ namespace RepositoryAPI
                         Child.GroupStructure = String.Empty
                         Child.GroupFields = new RpsFieldCollection(rps)
                         Child.GroupMemberPrefix = String.Empty
-
-                        ; Record that the field used to be part of a GROUP
-
-                        Child.WasGroupMember = true
 
                         ; And add it to the fields collection
 
