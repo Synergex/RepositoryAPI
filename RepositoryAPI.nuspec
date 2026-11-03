@@ -2,13 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
 	<metadata>
 		<id>RepositoryAPI</id>
+		<title>Synergy/DE Repository API</title>
 		<version>$version$</version>
 		<authors>Synergex International Corporation</authors>
 		<license type="file">LICENSE.md</license>
 		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<copyright>Copyright 2026 Synergex International, Inc. All rights reserved.</copyright>
 		<description>A .NET API for accessing metadata from a Synergy Repository.</description>
-		<projectUrl>https://github.com/Synergex/CodeGen</projectUrl>
+		<projectUrl>https://github.com/Synergex/RepositoryAPI</projectUrl>
 		<repository type="git" url="https://github.com/Synergex/RepositoryAPI" commit="$commit$" />
+		<readme>README.md</readme>
 		<dependencies>
 			<group targetFramework="netstandard2.0">
 				<dependency id="Newtonsoft.Json" version="[13.0.4,14)" />
