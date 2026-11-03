@@ -1,0 +1,20 @@
+
+Repository API Release Procedure (NuGet)
+========================================
+
+This document defines the procedure for distributing a new release of Repository on NuGet.
+
+1. Check that all software changes have been commited and pushed to GitHub.
+
+2. Update the documentation (README.TXT, etc.).
+
+3. Run the Azure DevOps build pipeline and verify that it completes successfully.
+    (https://synergexdev.visualstudio.com/Development/_build?definitionId=430)
+
+4. Download NuGet package artifact (RepositoryAPI.x.y.x.nupkg) and save it somewhere.
+
+5. Edit azure-pipelines.yml and bump the version number.
+
+6. Commit AND PUSH to GitHub the version number changes with a comment of "Bumped version to X.Y.Z for next release.".
+
+7. If necessary, update the version used by other products (CodeGen, MetaDataTool, etc.)
