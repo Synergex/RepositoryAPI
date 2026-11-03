@@ -4,7 +4,7 @@
 		<id>RepositoryAPI</id>
 		<version>$version$</version>
 		<authors>Synergex International Corporation</authors>
-		<license type="expression">BSD-2-Clause</license>
+		<license type="file">LICENSE.md</license>
 		<requireLicenseAcceptance>true</requireLicenseAcceptance>
 		<description>A .NET API for accessing metadata from a Synergy Repository.</description>
 		<projectUrl>https://github.com/Synergex/CodeGen</projectUrl>
