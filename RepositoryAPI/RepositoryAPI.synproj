@@ -66,10 +66,10 @@
     <Compile Include="StringTools.dbl" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\LICENSE.md">
+    <Content Include="..\LICENSE.md" Pack="true" PackagePath="\" Link="LICENSE.md">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="..\README.md">
+    <Content Include="..\README.md" Pack="true" PackagePath="\" Link="README.md">
       <SubType>Content</SubType>
     </Content>
     <Content Include="DataMappingsExample.xml">
